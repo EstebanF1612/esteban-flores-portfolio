@@ -1,5 +1,5 @@
 .ContainerMain{
-    background: blue;
+    background-image: linear-gradient(to bottom, #191970, #090927);
     align-items: center;
     flex-direction: row;
     padding: 25pt;
