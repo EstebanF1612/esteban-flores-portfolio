@@ -7,7 +7,7 @@ import ContactPage from "./pages/ContactPage";
 import AdminPanel from "./pages/AdminPanel";
 import { useEffect } from "react";
 
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 function ScrollToTopOnRouteChange() {
   const location = useLocation();
