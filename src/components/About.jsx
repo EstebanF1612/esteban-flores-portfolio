@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import "../styles/About.css";
+import aboutImageOne from "../assets/about_1.png";
+import aboutImageTwo from "../assets/about_2.jpg";
+import aboutImageThree from "../assets/about_3.jpg";
 
-// ===== CUSTOMIZE: Add or replace image paths here =====
 const backgroundImages = [
-    "about_1.png",
-    "about_2.jpg",
-    "about_3.jpg",
+    aboutImageOne,
+    aboutImageTwo,
+    aboutImageThree,
 ];
 
 export default function About() {
@@ -34,7 +36,7 @@ export default function About() {
             <div
                 className="about-bg-image"
                 style={{
-                    backgroundImage: `url(/src/assets/${currentImage})`,
+                    backgroundImage: `url("${currentImage}")`,
                     opacity: isFading ? 0.3 : 1,
                     transition: "opacity 500ms ease-in-out",
                 }}
