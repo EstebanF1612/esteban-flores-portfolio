@@ -1,0 +1,137 @@
+.Projects {
+	padding: 3rem 1.5rem;
+	background: #000000;
+	text-align: center;
+}
+
+.Projects h2 {
+	color: #f8fafc;
+	font-size: 2.2rem;
+	margin-bottom: 2rem;
+}
+
+.projects-grid {
+	display: flex;
+	gap: 1.25rem;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.project-card-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.55rem;
+}
+
+.article-card {
+	width: 350px;
+	height: 220px;
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+	transition: all 300ms;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 0;
+	background: #0f172a;
+	cursor: pointer;
+}
+
+.article-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 18px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(87, 144, 176, 0.45);
+}
+
+.article-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.article-card .content {
+	box-sizing: border-box;
+	width: 100%;
+	position: absolute;
+	padding: 30px 20px 20px 20px;
+	height: auto;
+	bottom: 0;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.92) 0%,
+		rgba(0, 0, 0, 0.82) 45%,
+		rgba(0, 0, 0, 0.38) 78%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	text-align: left;
+}
+
+.article-card .date,
+.article-card .title {
+	margin: 0;
+}
+
+.article-card .date {
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.9);
+	margin-bottom: 4px;
+}
+
+.article-card .title {
+	font-size: 17px;
+	color: #fff;
+	font-weight: 700;
+}
+
+.learn-more {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #8ec0dd;
+	opacity: 0;
+	transform: translateY(-3px);
+	transition: opacity 200ms ease, transform 200ms ease;
+	pointer-events: none;
+}
+
+.project-card-wrap:hover .learn-more {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.see-all-projects-btn {
+	margin-top: 2rem;
+	border: 1px solid rgba(142, 192, 221, 0.55);
+	border-radius: 999px;
+	padding: 0.75rem 1.5rem;
+	background: #5790b0;
+	color: #081018;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.see-all-projects-btn:hover {
+	background: #8ec0dd;
+}
+
+@media (max-width: 1200px) {
+	.article-card {
+		width: 320px;
+	}
+}
+
+@media (max-width: 768px) {
+	.Projects h2 {
+		font-size: 1.8rem;
+	}
+
+	.article-card {
+		width: min(92vw, 350px);
+	}
+}

@@ -1,0 +1,13 @@
+.site-footer {
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    text-align: left;
+}
+
+.site-footer-text {
+    margin: 0;
+    color: #d4d4d4;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}

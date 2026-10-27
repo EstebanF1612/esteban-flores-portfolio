@@ -1,0 +1,395 @@
+.admin-panel-shell {
+    min-height: 100vh;
+    padding: 32px 20px 56px;
+    background: linear-gradient(180deg, #0b1220 0%, #111827 45%, #0f172a 100%);
+    color: #e5eefb;
+}
+
+.admin-card {
+    max-width: 1180px;
+    margin: 0 auto 18px;
+    padding: 22px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 20px;
+    background: rgba(15, 23, 42, 0.86);
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.4);
+    backdrop-filter: blur(16px);
+}
+
+.admin-panel-title {
+    margin: 0 0 16px;
+    line-height: 1.05;
+}
+
+.admin-login-card,
+.admin-form-card,
+.admin-tabs-card,
+.admin-status-card,
+.admin-topbar {
+    display: grid;
+    gap: 18px;
+}
+
+.admin-topbar {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.admin-topbar-actions,
+.admin-tabs,
+.admin-block-toolbar,
+.admin-block-actions,
+.admin-inline-actions,
+.admin-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin-block-toolbar-shell {
+    position: sticky;
+    top: 16px;
+    z-index: 7;
+    padding-bottom: 12px;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.94) 100%);
+}
+
+.admin-block-toolbar {
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 16px 28px rgba(2, 6, 23, 0.24);
+}
+
+.admin-login-form,
+.admin-grid,
+.admin-field,
+.admin-media-editor,
+.admin-list-editor,
+.admin-skill-grid,
+.admin-preview-panel {
+    display: grid;
+    gap: 12px;
+}
+
+.admin-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.admin-field label,
+.admin-field {
+    font-weight: 600;
+}
+
+.admin-field input,
+.admin-field textarea,
+.admin-field select,
+.admin-login-form input,
+.admin-list-row input,
+.admin-media-editor input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #eff6ff;
+}
+
+.admin-field textarea {
+    min-height: 160px;
+    resize: vertical;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.admin-tabs button,
+.admin-topbar button,
+.admin-login-form button,
+.admin-form-header button,
+.admin-block-toolbar button,
+.admin-block-actions button,
+.admin-inline-actions button,
+.admin-save-button,
+.admin-list-row button,
+.admin-chips-row button {
+    border: 0;
+    border-radius: 999px;
+    padding: 11px 16px;
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.admin-tabs button.active {
+    background: #38bdf8;
+    color: #082f49;
+}
+
+.admin-form-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.admin-helper-text,
+.admin-status-card,
+.admin-subsection-header p {
+    color: #94a3b8;
+}
+
+.admin-error {
+    color: #fca5a5;
+}
+
+.admin-notification-stack {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.admin-notification {
+    width: min(620px, 100%);
+    border-radius: 16px;
+    padding: 14px 18px;
+    box-shadow: 0 18px 44px rgba(2, 6, 23, 0.42);
+    border: 1px solid transparent;
+    color: #f8fafc;
+    font-weight: 700;
+    text-align: left;
+    backdrop-filter: blur(14px);
+    pointer-events: auto;
+}
+
+.admin-notification-success {
+    background: rgba(22, 101, 52, 0.95);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.admin-notification-error {
+    background: rgba(153, 27, 27, 0.95);
+    border-color: rgba(248, 113, 113, 0.35);
+}
+
+.admin-notification-info {
+    background: rgba(55, 65, 81, 0.96);
+    border-color: rgba(148, 163, 184, 0.35);
+}
+
+.admin-save-button {
+    justify-self: start;
+    background: linear-gradient(135deg, #38bdf8, #22c55e);
+    color: #082f49;
+}
+
+.admin-block-card,
+.admin-skill-card {
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 18px;
+    background: rgba(2, 6, 23, 0.32);
+    padding: 16px;
+}
+
+.admin-block-card-header,
+.admin-form-header,
+.admin-preview-panel h3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+}
+
+.admin-block-card-header {
+    margin-bottom: 18px;
+}
+
+.admin-block-card textarea {
+    width: 100%;
+    min-height: 220px;
+    box-sizing: border-box;
+    line-height: 1.75;
+    font-size: 1rem;
+}
+
+.admin-subsection-sticky {
+    position: sticky;
+}
+
+.admin-detail-blocks-section {
+    position: relative;
+    display: grid;
+    gap: 14px;
+    padding-bottom: 10px;
+    z-index: 5;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 16px 28px rgba(2, 6, 23, 0.24);
+}
+
+.admin-subsection-sticky h3,
+.admin-subsection-sticky p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.admin-subsection-sticky p {
+    margin-top: 6px;
+}
+
+.admin-detail-preview {
+    margin-top: 10px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.admin-detail-preview.detail-page {
+    min-height: auto;
+    padding: 0;
+    background: transparent;
+}
+
+.admin-detail-preview .detail-container {
+    width: min(860px, 100%);
+    margin: 0 auto;
+}
+
+.admin-detail-preview .detail-text,
+.admin-detail-preview .detail-list-item {
+    font-size: 1.02rem;
+}
+
+.admin-detail-preview .detail-image-source {
+    max-height: 380px;
+}
+
+.admin-detail-preview .detail-company-logo {
+    width: clamp(88px, 8vw, 108px);
+}
+
+.admin-detail-preview .detail-title,
+.admin-detail-preview .detail-subtitle,
+.admin-detail-preview .detail-subheader,
+.admin-detail-preview .detail-skills-title {
+    text-align: left;
+}
+
+.admin-list-row {
+    display: grid;
+    grid-template-columns: 1fr 100px auto;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.admin-image-preview {
+    max-width: 100%;
+    max-height: 220px;
+    border-radius: 16px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.admin-logo-preview {
+    width: 120px;
+}
+
+.admin-skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.admin-skill-card {
+    text-align: center;
+}
+
+.admin-skill-card img {
+    max-width: 72px;
+    max-height: 72px;
+    margin: 8px auto 0;
+    display: block;
+}
+
+.admin-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin-chip {
+    background: rgba(56, 189, 248, 0.16) !important;
+    color: #e0f2fe !important;
+}
+
+.admin-toggle-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.admin-preview-panel {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    overflow: hidden;
+}
+
+.admin-form-card,
+.admin-tabs-card,
+.admin-topbar,
+.admin-status-card,
+.admin-login-card {
+    min-width: 0;
+}
+
+.admin-form-card,
+.admin-preview-panel,
+.admin-detail-blocks-section,
+.admin-block-card,
+.admin-skill-card {
+    width: 100%;
+}
+
+.admin-form-card {
+    overflow-x: visible;
+}
+
+.admin-preview-panel img {
+    max-width: 100%;
+    border-radius: 16px;
+}
+
+@media (max-width: 800px) {
+    .admin-panel-shell {
+        padding: 18px 14px 40px;
+    }
+
+    .admin-topbar,
+    .admin-form-header,
+    .admin-block-card-header {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .admin-list-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-block-card textarea {
+        min-height: 180px;
+    }
+}

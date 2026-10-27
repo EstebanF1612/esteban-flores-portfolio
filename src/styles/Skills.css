@@ -1,0 +1,79 @@
+.Skills{
+    background: #ffffff;
+    color: #111111;
+   padding: 15px;
+   text-align: center;
+}
+
+.Skills h2{
+    color: #111111;
+    font-size: 50px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.skills-container{
+    flex-direction: column;
+    align-items: left;
+    display: flex;
+}
+
+.skills-category{
+    margin-bottom: 20px;
+}
+
+.skills-category h3{
+    color: #111111;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.skills-array{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.skill-item{
+    flex: 0 0 calc(16.66% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.skill-item p{
+    color: #111111;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*
+
+display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    align-items: center;
+*/
+
+.skill-item img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.filter-white{
+    filter: brightness(0) invert(1);
+}

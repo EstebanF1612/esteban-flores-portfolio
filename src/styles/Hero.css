@@ -1,0 +1,142 @@
+.hero {
+    height: 100vh;
+    padding-top: 80px;
+    background-image: url("../assets/Hero-Background-GD.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+/*align-items: center;*/
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    padding-left: 10%;
+    padding-right: 240px;
+    z-index: 2;
+}
+
+.hero-content .hero-text {
+    max-width: 800px;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 45%;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.hero-content .hero-image{
+    position: absolute;
+    right: 10%;
+    top: 15%;
+    height: auto;
+}
+
+.heropic{
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero span {
+    background: linear-gradient(90deg, #ae34d3, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.hero-buttons button {
+    padding: 12px 15px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.hero-buttons button:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    padding: 3px;
+    background: linear-gradient(45deg, #4F46E5, #EC4899);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hero-buttons button:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 10px 30px -10px rgba(79, 70, 229, 0.5),
+    0 5px 15px rgba(236, 72, 153, 0.4);
+}
+
+.hero-buttons button:hover:before {
+    opacity: 1;
+}
+
+.hero-buttons button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: linear-gradient(45deg, rgba(79, 70, 229, 0), rgba(236, 72, 153, 0));
+  z-index: -1;
+  transition: all 0.4s ease;
+  filter: blur(15px);
+  opacity: 0;
+}
+
+.hero-buttons button:hover:after {
+  opacity: 1;
+  transform: scale(1.2);
+  background: linear-gradient(45deg, rgba(79, 70, 229, 0.3), rgba(236, 72, 153, 0.3));
+}
+
+.hero-buttons .outline {
+    background: white;
+    color: #000000;
+}
+
+.downpointer {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.downarrowpic{
+    filter: brightness(0) invert(1);
+    width: 70px;
+    height: auto;
+    animation: bounce 2s infinite;
+}
