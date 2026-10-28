@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchCollectionData } from "../data/firestoreData";
 import { useNavigate } from "react-router-dom";
+import { projectData as fallbackProjectData } from "../data/projectData";
 import "../styles/Projects.css";
 
 const projectAssets = import.meta.glob("../assets/*", { eager: true });
@@ -39,8 +40,8 @@ function resolveProjectImage(frontImg) {
 
 export default function Projects({ limit }) {
     const navigate = useNavigate();
-    const [projectData, setProjectData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [projectData, setProjectData] = useState(fallbackProjectData);
+    const [isLoading, setIsLoading] = useState(false);
     const [loadError, setLoadError] = useState("");
 
     useEffect(() => {
@@ -50,11 +51,12 @@ export default function Projects({ limit }) {
             try {
                 const data = await fetchCollectionData("projects");
                 if (isMounted) {
-                    setProjectData(data);
+                    setProjectData(data.length > 0 ? data : fallbackProjectData);
                 }
             } catch (error) {
+                console.error("Failed to load projects from Firestore:", error);
                 if (isMounted) {
-                    setLoadError("Unable to load projects right now.");
+                    setLoadError("");
                 }
             } finally {
                 if (isMounted) {

@@ -1,6 +1,7 @@
 import "../styles/Skills.css";
 import { useEffect, useMemo, useState } from "react";
 import { fetchCollectionData } from "../data/firestoreData";
+import { skillsData as fallbackSkillsData } from "../data/skillsData";
 
 const assets = import.meta.glob("../assets/skills/*", { eager: true });
 const SKILL_TYPE_ORDER = [
@@ -25,8 +26,8 @@ function resolveSkillImage(assetName) {
 }
 
 export default function Skills() {
-    const [skillsData, setSkillsData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [skillsData, setSkillsData] = useState(fallbackSkillsData);
+    const [isLoading, setIsLoading] = useState(false);
     const [loadError, setLoadError] = useState("");
 
     useEffect(() => {
@@ -36,23 +37,14 @@ export default function Skills() {
             try {
                 const data = await fetchCollectionData("skills");
                 if (isMounted) {
-                    setSkillsData(data);
+                    setSkillsData(data.length > 0 ? data : fallbackSkillsData);
                 }
             } catch (error) {
                 console.error("Failed to load skills from Firestore:", error);
 
                 if (isMounted) {
-                    try {
-                        const fallbackModule = await import("../data/skillsData");
-                        const fallbackSkills = Array.isArray(fallbackModule.skillsData)
-                            ? fallbackModule.skillsData
-                            : [];
-
-                        setSkillsData(fallbackSkills);
-                        setLoadError("");
-                    } catch (error) {
-                        setLoadError("Unable to load skills right now. error: " + error.message);
-                    }
+                    setSkillsData(fallbackSkillsData);
+                    setLoadError("");
                 }
             } finally {
                 if (isMounted) {

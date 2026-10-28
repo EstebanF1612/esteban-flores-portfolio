@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchDocumentData } from "../data/firestoreData";
+import { experienceData as fallbackExperienceData } from "../data/experienceData";
+import { projectData as fallbackProjectData } from "../data/projectData";
 import "../styles/DetailPage.css";
 
 const detailAssets = import.meta.glob("../assets/*", { eager: true });
@@ -203,19 +205,20 @@ export default function DetailPage() {
         let isMounted = true;
 
         async function loadDetail() {
-            setIsLoading(true);
             setLoadError("");
+            const fallbackData = isExperienceDetail ? fallbackExperienceData : fallbackProjectData;
+            const fallbackItem = fallbackData.find((entry) => entry.id === id) || null;
 
             try {
                 const collectionName = isExperienceDetail ? "experience" : "projects";
                 const data = await fetchDocumentData(collectionName, id);
                 if (isMounted) {
-                    setItem(data);
+                    setItem(data || fallbackItem);
                 }
             } catch (error) {
+                console.error("Failed to load detail from Firestore:", error);
                 if (isMounted) {
-                    setLoadError("Unable to load this post right now.");
-                    setItem(null);
+                    setLoadError("");
                 }
             } finally {
                 if (isMounted) {
@@ -225,6 +228,9 @@ export default function DetailPage() {
         }
 
         if (id && (category === "experience" || category === "project")) {
+            const fallbackData = isExperienceDetail ? fallbackExperienceData : fallbackProjectData;
+            setItem(fallbackData.find((entry) => entry.id === id) || null);
+            setIsLoading(false);
             loadDetail();
         } else {
             setItem(null);

@@ -2,6 +2,7 @@ import "../styles/Experience.css";
 import { useEffect, useMemo, useState } from "react";
 import { fetchCollectionData } from "../data/firestoreData";
 import { useNavigate } from "react-router-dom";
+import { experienceData as fallbackExperienceData } from "../data/experienceData";
 
 // import lidersis from "../assets/logo-lidersis.png";
 // import tru from "../assets/logo-tru.png";
@@ -28,8 +29,8 @@ function formatMonthYear(value) {
 
 export default function Experience({ limit }) {
     const navigate = useNavigate();
-    const [experienceData, setExperienceData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [experienceData, setExperienceData] = useState(fallbackExperienceData);
+    const [isLoading, setIsLoading] = useState(false);
     const [loadError, setLoadError] = useState("");
 
     useEffect(() => {
@@ -39,11 +40,12 @@ export default function Experience({ limit }) {
             try {
                 const data = await fetchCollectionData("experience");
                 if (isMounted) {
-                    setExperienceData(data);
+                    setExperienceData(data.length > 0 ? data : fallbackExperienceData);
                 }
             } catch (error) {
+                console.error("Failed to load experience from Firestore:", error);
                 if (isMounted) {
-                    setLoadError("Unable to load experience right now.");
+                    setLoadError("");
                 }
             } finally {
                 if (isMounted) {
