@@ -15,7 +15,13 @@ export default function Hero() {
                     <h1>I'm <span>Esteban Flores</span></h1>
                     <p>Software Engineer Co-Op Student with Experience in AI, Full-Stack Web and Mobile App Development.</p>
                     <div className="hero-buttons">
-                        <button> Download Resume</button>
+                        <a
+                            href="https://drive.google.com/uc?export=download&id=1E-ekNLsfglzWrwTpmY3IlvBLzPoaIlhq"
+                            download="Esteban-Flores-Resume.pdf"
+                            className="resume-download"
+                        >
+                            Download Resume
+                        </a>
                     </div>
                     <div className="downpointer">
                         <img src={downArrow} alt="Down Arrow" className="downarrowpic"/>
